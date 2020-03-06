@@ -1,0 +1,61 @@
+.modal_overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_window{
+    display: flex;
+    align-items: center;
+    width: 500px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 50px auto;
+    height: 800px;
+    color: #fff;
+
+}
+
+.modal_header,
+.modal_body{
+    padding: 10px;
+}
+
+.modal_header{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+.modal_title{
+    font-size: 30px;
+    font-style: bold;
+}
+
+.modal_close{
+    cursor: pointer;
+    font-size: 30px;
+   
+}
+
+.modal_close:hover{
+    color: red;
+    
+}
+.modal_description{
+    padding-top: 10px;
+}
+.modal_popularity{
+    padding-top: 20px;
+    text-transform: capitalize;
+}
+.modal_budget{
+    padding-top: 10px;
+    text-transform: capitalize;
+
+}
