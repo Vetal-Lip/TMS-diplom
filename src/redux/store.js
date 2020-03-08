@@ -1,17 +1,17 @@
 import { createStore, combineReducers } from "redux";
 import FormReducer from './Reducers/FormReducer';
-import moviesMiddlewareReducer from './Reducers/moviesMiddlewareReducer';
+import moviesReducer from './Reducers/moviesReducer';
 import ModalReducer from './Reducers/ModalReducer';
-import cardMiddlewareReducer from './Reducers/cardMiddlewareReducer';
+import cardReducer from './Reducers/cardReducer';
 import { rootMidlleware } from './rootMidlleware';
 
 
 // Union all reducers
 const reducers = combineReducers({
     FormReducer,
-    moviesMiddlewareReducer,
+    moviesReducer,
     ModalReducer,
-    cardMiddlewareReducer
+    cardReducer
 });
 
 // Create Store

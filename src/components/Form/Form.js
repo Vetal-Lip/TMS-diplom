@@ -5,7 +5,7 @@ import { thunkMoviesMiddleware } from '../../redux/Middleware/moviesMiddleware';
 import { getInputFieldValue, onClickSearchButton, getSearchBy, getSortByDate, getSortByRaiting } from '../../redux/Actions/Actions';
 
 
-function Form(props) {
+function form(props) {
 
     const onSubmitForm = (event) => event.preventDefault()
 
@@ -50,13 +50,13 @@ function Form(props) {
    
 
 const mapStateToProps = (state) => ({
-    state: state.moviesMiddlewareReducer.data,
+    state: state.moviesReducer.data,
     inputValue: state.FormReducer.inputValue,
     searchBy: state.FormReducer.searchBy,
     loading: state.FormReducer.loading,
     sortBy: state.FormReducer.sortBy,
     countMovies: state.FormReducer.countMovies,
-    hasErrored: state.moviesMiddlewareReducer.hasErrored
+    hasErrored: state.moviesReducer.hasErrored
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -69,5 +69,5 @@ const mapDispatchToProps = (dispatch) => ({
     onClickRaiting: (id) => dispatch(getSortByRaiting(id)),
 });
 
-export const FormContainer = connect(mapStateToProps, mapDispatchToProps)(Form)
+export const FormContainer = connect(mapStateToProps, mapDispatchToProps)(form)
 

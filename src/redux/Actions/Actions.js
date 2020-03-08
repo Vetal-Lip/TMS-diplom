@@ -13,13 +13,13 @@ export const getSortByRaiting = (payload) => ({type: GET_SORT_BY_RATING, payload
 
 
 // create Action for Fetch (middleWare/movie)
-export const ITEMS_IS_LOADING = 'ITEMS_IS_LOADING';
+export const ITEMS_FETCH_DATA_LOADING = 'ITEMS_FETCH_DATA_LOADING';
 export const ITEMS_FETCH_DATA_SUCCESS = 'ITEMS_FETCH_DATA_SUCCESS';
-export const ITEMS_HAS_ERRORED = 'ITEMS_HAS_ERRORED';
+export const ITEMS_FETCH_DATA_ERRORED = 'ITEMS_FETCH_DATA_ERRORED';
 
-export const itemsIsLoading = (payload) => ({type: ITEMS_IS_LOADING, payload});
+export const itemsFetchDataLoading = (payload) => ({type: ITEMS_FETCH_DATA_LOADING, payload});
 export const itemsFetchDataSuccess = (payload) => ({type: ITEMS_FETCH_DATA_SUCCESS, payload });
-export const itemsHasErrored = (payload) => ({type: ITEMS_HAS_ERRORED, payload });
+export const itemsFetchDataErrored = (payload) => ({type: ITEMS_FETCH_DATA_ERRORED, payload });
 
 
 // create Action for ModalWindow
@@ -31,13 +31,13 @@ export const closeModal =() => ({type: CLOSE_MODAL });
 
 
 // create Action for Fetch (middleWare/movie/{id})
-export const MOVIE_IS_LOADING = 'MOVIE_IS_LOADING';
+export const MOVIE_FETCH_DATA_LOADING = 'MOVIE_FETCH_DATA_LOADING';
 export const MOVIE_FETCH_DATA_SUCCESS = 'MOVIE_FETCH_DATA_SUCCESS';
-export const MOVIE_HAS_ERRORED = 'MOVIE_HAS_ERRORED';
+export const MOVIE_FETCH_DATA_ERRORED = 'MOVIE_FETCH_DATA_ERRORED';
 
-export const movieIsLoading = (payload) => ({type: MOVIE_IS_LOADING, payload});
+export const movieFetchDataLoading = (payload) => ({type: MOVIE_FETCH_DATA_LOADING, payload});
 export const movieFetchDataSuccess = (payload) => ({type: MOVIE_FETCH_DATA_SUCCESS, payload });
-export const movieHasErrored = () => ({type: MOVIE_HAS_ERRORED });
+export const movieFetchDataErrored = () => ({type: MOVIE_FETCH_DATA_ERRORED });
 
 
 // create Action for CountMovies

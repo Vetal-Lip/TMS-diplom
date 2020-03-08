@@ -1,7 +1,7 @@
 import {
-    MOVIE_IS_LOADING,
+    MOVIE_FETCH_DATA_LOADING,
     MOVIE_FETCH_DATA_SUCCESS,
-    MOVIE_HAS_ERRORED
+    MOVIE_FETCH_DATA_ERRORED
 } from '../Actions/Actions';
 
 const initialState = {
@@ -9,9 +9,9 @@ const initialState = {
     loading: false
 }
 
-export default function cardMiddlewareReducer(state = initialState, action) {
+export default function cardReducer(state = initialState, action) {
     switch (action.type) {
-        case MOVIE_IS_LOADING:
+        case MOVIE_FETCH_DATA_LOADING:
             return {
                 ...state,
                 loading: action.payload
@@ -24,7 +24,7 @@ export default function cardMiddlewareReducer(state = initialState, action) {
 
             };
 
-        case MOVIE_HAS_ERRORED:
+        case MOVIE_FETCH_DATA_ERRORED:
             return {
                 ...state,
             };

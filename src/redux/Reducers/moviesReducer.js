@@ -1,19 +1,19 @@
 import {
-    ITEMS_IS_LOADING,
+    ITEMS_FETCH_DATA_LOADING,
     ITEMS_FETCH_DATA_SUCCESS,
-    ITEMS_HAS_ERRORED
+    ITEMS_FETCH_DATA_ERRORED,
 } from '../Actions/Actions';
 
 const initialState = {
     data: {},
     loading: false,
     hasErrored: undefined,
-    
+
 }
 
-export default function moviesMiddlewareReducer(state = initialState, action) {
+export default function moviesReducer(state = initialState, action) {
     switch (action.type) {
-        case ITEMS_IS_LOADING:
+        case ITEMS_FETCH_DATA_LOADING:
             return {
                 ...state,
                 loading: action.payload
@@ -26,7 +26,7 @@ export default function moviesMiddlewareReducer(state = initialState, action) {
 
             };
 
-        case ITEMS_HAS_ERRORED:
+        case ITEMS_FETCH_DATA_ERRORED:
             return {
                 ...state,
                 hasErrored: action.payload

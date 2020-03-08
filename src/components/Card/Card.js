@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './styles.module.css';
 import { connect, useDispatch } from 'react-redux';
 import { openModal, getCountMovies } from '../../redux/Actions/Actions';
@@ -13,10 +13,10 @@ function Card(props) {
     if (props.state) {
         filtredData = props.state.filter((el) => {
             if (props.searchBy === 'title') {
-                return el.title.toLowerCase().includes(props.searchValue.toLowerCase())
+                return el.title && el.title.toLowerCase().includes(props.searchValue.toLowerCase())
             } else {
                 if (props.searchBy === 'genre') {
-                    return el.genres.some((el) => el.toLowerCase().includes(props.searchValue.toLowerCase()))
+                    return el.genres && el.genres.some((el) => el.toLowerCase().includes(props.searchValue.toLowerCase()))
                 }
             }
         })
@@ -24,10 +24,14 @@ function Card(props) {
     }
 
     let countMovies = filtredData.length;
+    const getCountDispatch = useDispatch();
+    function getMyCount() {
+        getCountDispatch(getCountMovies(countMovies));
+    }
 
-    const getCount = useDispatch();
-    getCount(getCountMovies(countMovies));
-
+    useEffect(() => {
+        getMyCount()
+    })
 
     sortedData = [...filtredData].sort((a, b) => {
         if (props.sortBy === 'rating') {
@@ -66,7 +70,7 @@ function Card(props) {
 const mapStateToProps = (state) => {
 
     return {
-        state: state.moviesMiddlewareReducer.data.data,
+        state: state.moviesReducer.data.data,
         searchValue: state.FormReducer.searchValue,
         searchBy: state.FormReducer.searchBy,
         sortBy: state.FormReducer.sortBy
@@ -77,6 +81,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
     openModal: () => dispatch(openModal()),
     getMovieInfo: (id) => dispatch(thunkItemMiddleware(id)),
+    getCountMovies: (count) => dispatch(getCountMovies(count))
 });
 
 export const CardContainer = connect(mapStateToProps, mapDispatchToProps)(Card)

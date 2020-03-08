@@ -23,7 +23,7 @@ export default function FormReducer(state = initialState, action) {
         case ON_CLICK_SEARCH_BUTTON:
             return {
                 ...state,
-                inputValue: ' ',
+                inputValue: '',
                 searchValue: state.inputValue,
             }
 

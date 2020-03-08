@@ -4,7 +4,7 @@ import { closeModal } from '../../redux/Actions/Actions';
 import { connect } from 'react-redux';
 
 
-function Modal(props) {
+function modal(props) {
   return (props.isOpen === true) ? <div className="vmodal">
     <div className={styles.modal_overlay} >
       <div className={styles.modal_window} >
@@ -34,11 +34,11 @@ function Modal(props) {
 
 const mapStateToProps = (state) => ({
   isOpen: state.ModalReducer.isOpen,
-  movieInfo: state.cardMiddlewareReducer.movieInfo
+  movieInfo: state.cardReducer.movieInfo
 })
 
 const mapDispatchToProps = (dispatch) => ({
   closeModal: () => dispatch(closeModal())
 })
 
-export const ModalContainer = connect(mapStateToProps, mapDispatchToProps)(Modal)
+export const ModalContainer = connect(mapStateToProps, mapDispatchToProps)(modal)

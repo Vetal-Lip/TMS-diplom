@@ -1,24 +1,24 @@
 import {
-    movieIsLoading,
+    movieFetchDataLoading,
     movieFetchDataSuccess,
-    movieHasErrored,
+    movieFetchDataErrored,
 } from '../Actions/Actions';
 
 export function thunkItemMiddleware(id) {
     return (dispatch) => {
-        dispatch(movieIsLoading(true));
+        dispatch(movieFetchDataLoading(true));
 
         fetch(`https://reactjs-cdp.herokuapp.com/movies/` + id)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(response.statusText);
                 }
-                dispatch(movieIsLoading(false));
+                dispatch(movieFetchDataLoading(false));
                 return response;
             })
             .then(response => response.json())
             .then(data => dispatch(movieFetchDataSuccess(data)))
-            .catch(() => dispatch(movieHasErrored()))
+            .catch(() => dispatch(movieFetchDataErrored()))
 
     }
 }
