@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/TMS-diplom/static/css/main.9cab8865.chunk.css",
+    "main.js": "/TMS-diplom/static/js/main.150c4ff9.chunk.js",
+    "main.js.map": "/TMS-diplom/static/js/main.150c4ff9.chunk.js.map",
+    "runtime-main.js": "/TMS-diplom/static/js/runtime-main.92d05581.js",
+    "runtime-main.js.map": "/TMS-diplom/static/js/runtime-main.92d05581.js.map",
+    "static/js/2.0a09c0a8.chunk.js": "/TMS-diplom/static/js/2.0a09c0a8.chunk.js",
+    "static/js/2.0a09c0a8.chunk.js.map": "/TMS-diplom/static/js/2.0a09c0a8.chunk.js.map",
+    "index.html": "/TMS-diplom/index.html",
+    "precache-manifest.3b80f99d3372ecf555a87ec8ffe4aaec.js": "/TMS-diplom/precache-manifest.3b80f99d3372ecf555a87ec8ffe4aaec.js",
+    "service-worker.js": "/TMS-diplom/service-worker.js",
+    "static/css/main.9cab8865.chunk.css.map": "/TMS-diplom/static/css/main.9cab8865.chunk.css.map",
+    "static/js/2.0a09c0a8.chunk.js.LICENSE.txt": "/TMS-diplom/static/js/2.0a09c0a8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.92d05581.js",
+    "static/js/2.0a09c0a8.chunk.js",
+    "static/css/main.9cab8865.chunk.css",
+    "static/js/main.150c4ff9.chunk.js"
+  ]
+}
